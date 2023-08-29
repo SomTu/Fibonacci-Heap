@@ -32,8 +32,8 @@ namespace fib {
 			return;
 		}
 		N_ptr<T> node_inside	= std::move(vector[incoming_degree]);
-		int key_inside			= node_inside->get_key();
-		int key_incoming		= incoming_node->get_key();
+		int key_inside		= node_inside->get_key();
+		int key_incoming	= incoming_node->get_key();
 		if (key_inside < key_incoming) {
 			node_inside->add_child(std::move(incoming_node));
 			merge_in_vector<T>(vector, std::move(node_inside));
@@ -73,7 +73,7 @@ namespace fib {
 
 	template <typename T> fib::Node<T>::Node(T _data, int _key) {
 		data	= _data;
-		key		= _key;
+		key	= _key;
 		degree	= 0;
 	}
 	template <typename T> void fib::Node<T>::add_child(N_ptr<T> other_node) {
@@ -96,8 +96,8 @@ namespace fib {
 		return current_min;
 	}
 	template <typename T> fib::Fib_Heap<T>::Fib_Heap(T _null_data) {
-		min				= nullptr;
-		null_data		= _null_data;
+		min		= nullptr;
+		null_data	= _null_data;
 		num_of_nodes	= 0;
 	}
 	template <typename T> void fib::Fib_Heap<T>::insert(T data, int key) {
